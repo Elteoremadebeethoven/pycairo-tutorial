@@ -33,7 +33,7 @@ cr.select_font_face(
     cairo.FONT_SLANT_ITALIC,
     cairo.FONT_WEIGHT_NORMAL
 )
-cr.set_source_rgb(50, 50, 0)
+cr.set_source_rgb(1, 1, 0)
 cr.move_to(160, 50)
 cr.show_text("World")
 
@@ -54,7 +54,7 @@ HEIGHT = 300
 ps = cairo.PDFSurface(f"./exports/{FILE_NAME[:-3]}.pdf", WIDTH, HEIGHT)
 cr = cairo.Context(ps)
 # - Define color source
-cr.set_source_rgb(50, 0, 0)
+cr.set_source_rgb(1, 0, 0)
 # ------ Text 1
 # - Define some text - 1
 cr.select_font_face(
@@ -74,7 +74,7 @@ cr.select_font_face(
     cairo.FONT_SLANT_ITALIC,
     cairo.FONT_WEIGHT_BOLD
 )
-cr.set_source_rgb(0, 200, 10)
+cr.set_source_rgb(0, 1, 1)
 cr.move_to(100, 100)
 cr.show_text("World")
 
@@ -93,7 +93,7 @@ HEIGHT = 300
 ps = cairo.SVGSurface(f"./exports/{FILE_NAME[:-3]}.svg", WIDTH, HEIGHT)
 cr = cairo.Context(ps)
 # - Define color source
-cr.set_source_rgb(50, 0, 0)
+cr.set_source_rgb(1, 0, 0)
 # ------ Text 1
 # - Define some text - 1
 cr.select_font_face(
@@ -114,7 +114,7 @@ cr.select_font_face(
     cairo.FONT_WEIGHT_BOLD
 )
 cr.set_font_size(100)
-cr.set_source_rgb(50, 0, 10)
+cr.set_source_rgb(1, 0, 1)
 cr.move_to(70, 130)
 cr.show_text("World")
 
@@ -157,7 +157,7 @@ class Example(Gtk.Window):
         self.show_all()
 
     def on_draw(self, wid, cr):
-        cr.set_source_rgb(5, 0, 0)
+        cr.set_source_rgb(1, 0, 0)
         cr.select_font_face("Sans", cairo.FONT_SLANT_NORMAL,
             cairo.FONT_WEIGHT_NORMAL)
         cr.set_font_size(40)
