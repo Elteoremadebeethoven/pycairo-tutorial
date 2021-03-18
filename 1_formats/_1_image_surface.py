@@ -28,8 +28,8 @@ cr.select_font_face(
     cairo.FONT_SLANT_ITALIC,
     cairo.FONT_WEIGHT_NORMAL
 )
-cr.set_source_rgb(50, 50, 0)
+cr.set_source_rgb(1, 1, 0)
 cr.move_to(160, 50)
 cr.show_text("World")
 
-ims.write_to_png(f"./1_formats/{FILE_NAME[:-3]}.png")
+ims.write_to_png(f"./exports/{FILE_NAME[:-3]}.png")

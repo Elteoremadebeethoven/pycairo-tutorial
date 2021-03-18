@@ -4,10 +4,10 @@ FILE_NAME = os.path.basename(__file__)
 WIDTH = 500
 HEIGHT = 300
 # - Create surface PDF
-ps = cairo.PDFSurface(f"./1_formats/{FILE_NAME[:-3]}.pdf", WIDTH, HEIGHT)
+ps = cairo.PDFSurface(f"./exports/{FILE_NAME[:-3]}.pdf", WIDTH, HEIGHT)
 cr = cairo.Context(ps)
 # - Define color source
-cr.set_source_rgb(50, 0, 0)
+cr.set_source_rgb(1, 0, 0)
 # ------ Text 1
 # - Define some text - 1
 cr.select_font_face(
@@ -27,7 +27,7 @@ cr.select_font_face(
     cairo.FONT_SLANT_ITALIC,
     cairo.FONT_WEIGHT_BOLD
 )
-cr.set_source_rgb(0, 200, 10)
+cr.set_source_rgb(0, 1, 1)
 cr.move_to(100, 100)
 cr.show_text("World")
 

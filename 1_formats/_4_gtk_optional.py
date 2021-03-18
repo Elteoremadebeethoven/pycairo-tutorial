@@ -32,7 +32,7 @@ class Example(Gtk.Window):
         self.show_all()
 
     def on_draw(self, wid, cr):
-        cr.set_source_rgb(5, 0, 0)
+        cr.set_source_rgb(1, 0, 0)
         cr.select_font_face("Sans", cairo.FONT_SLANT_NORMAL,
             cairo.FONT_WEIGHT_NORMAL)
         cr.set_font_size(40)
