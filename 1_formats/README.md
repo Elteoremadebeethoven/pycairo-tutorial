@@ -37,7 +37,7 @@ cr.set_source_rgb(50, 50, 0)
 cr.move_to(160, 50)
 cr.show_text("World")
 
-ims.write_to_png(f"./1_formats/{FILE_NAME[:-3]}.png")
+ims.write_to_png(f"./exports/{FILE_NAME[:-3]}.png")
 ```
 
 <p align="center"><img src ="../exports/_1_image_surface.png" /></p>
@@ -51,7 +51,7 @@ FILE_NAME = os.path.basename(__file__)
 WIDTH = 500
 HEIGHT = 300
 # - Create surface PDF
-ps = cairo.PDFSurface(f"./1_formats/{FILE_NAME[:-3]}.pdf", WIDTH, HEIGHT)
+ps = cairo.PDFSurface(f"./exports/{FILE_NAME[:-3]}.pdf", WIDTH, HEIGHT)
 cr = cairo.Context(ps)
 # - Define color source
 cr.set_source_rgb(50, 0, 0)
@@ -90,7 +90,7 @@ FILE_NAME = os.path.basename(__file__)
 WIDTH = 500
 HEIGHT = 300
 
-ps = cairo.SVGSurface(f"./1_formats/{FILE_NAME[:-3]}.svg", WIDTH, HEIGHT)
+ps = cairo.SVGSurface(f"./exports/{FILE_NAME[:-3]}.svg", WIDTH, HEIGHT)
 cr = cairo.Context(ps)
 # - Define color source
 cr.set_source_rgb(50, 0, 0)
