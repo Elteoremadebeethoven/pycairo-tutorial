@@ -1,10 +1,20 @@
-from cairo_template import *
+import os
+import sys
+sys.path.append(os.getcwd())
+from imports import *
 FILE_NAME = os.path.basename(__file__)
+IMAGE_CONFIG = {
+    "width": 800,
+    "height": 260,
+    "transparency": False,
+}
+
 
 class Shape(Figure):
-    def on_draw(self, cr):
-        cr.set_source_rgba(1, 0, 0, 1)
+    def on_draw(self, cr: cairo.Context):
+        cr.set_source_rgb(1, 0, 0)
         cr.set_line_width(5)
+        cr.save()
 
         cr.set_dash([8,16,24])
         cr.move_to(40, 30)  
@@ -16,11 +26,11 @@ class Shape(Figure):
         cr.line_to(750, 130)
         cr.stroke()
 
-        cr.set_dash([1.0])
+        cr.restore()
         cr.move_to(40, 230)
         cr.line_to(750, 230)
         cr.stroke()
 
-app = Shape(FILE_NAME,800,260,transparency=False)
+app = Shape(FILE_NAME,**IMAGE_CONFIG)
 app.write()
 

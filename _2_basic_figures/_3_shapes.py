@@ -1,8 +1,17 @@
-from cairo_template import *
+import os
+import sys
+sys.path.append(os.getcwd())
+from imports import *
 FILE_NAME = os.path.basename(__file__)
+IMAGE_CONFIG = {
+    "width": 400,
+    "height": 230,
+    "scale": 1.8,
+    "transparency": False,
+}
 
 class Shape(Figure):
-    def on_draw(self, cr):
+    def on_draw(self, cr: cairo.Context):
         cr.set_source_rgb(1, 1, 1)
 
         cr.rectangle(20, 20, 120, 80)
@@ -20,5 +29,5 @@ class Shape(Figure):
         cr.arc(0, 0, 50, 0, 2*PI)
         cr.fill()
 
-app = Shape(FILE_NAME,400,250)
+app = Shape(FILE_NAME,**IMAGE_CONFIG)
 app.write()
