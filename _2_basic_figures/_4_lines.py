@@ -2,13 +2,11 @@ import os
 import sys
 sys.path.append(os.getcwd())
 from imports import *
-FILE_NAME = os.path.basename(__file__)
 IMAGE_CONFIG = {
     "width": 800,
     "height": 260,
     "transparency": False,
 }
-
 
 class Shape(Figure):
     def on_draw(self, cr: cairo.Context):
@@ -31,6 +29,8 @@ class Shape(Figure):
         cr.line_to(750, 230)
         cr.stroke()
 
-app = Shape(FILE_NAME,**IMAGE_CONFIG)
-app.write()
 
+if __name__ == "__main__":
+    app = Shape(**IMAGE_CONFIG)
+    full_path = get_full_path_to_export(os,__file__)
+    app.write(full_path)

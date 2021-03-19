@@ -2,7 +2,6 @@ import os
 import sys
 sys.path.append(os.getcwd())
 from imports import *
-FILE_NAME = os.path.basename(__file__)
 IMAGE_CONFIG = {
     "width": 400,
     "height": 230,
@@ -29,5 +28,7 @@ class Shape(Figure):
         cr.arc(0, 0, 50, 0, 2*PI)
         cr.fill()
 
-app = Shape(FILE_NAME,**IMAGE_CONFIG)
-app.write()
+if __name__ == "__main__":
+    app = Shape(**IMAGE_CONFIG)
+    full_path = get_full_path_to_export(os,__file__)
+    app.write(full_path)

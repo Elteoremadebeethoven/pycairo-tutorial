@@ -4,9 +4,9 @@ import cairo
 # Tutorial: https://zetcode.com/gfx/pycairo/backends/
 
 '''
-ZetCode PyCairo tutorial 
+ZetCode PyCairo tutorial
 
-This program uses PyCairo to 
+This program uses PyCairo to
 draw on a window in GTK.
 
 Author: Jan Bodnar
@@ -36,7 +36,7 @@ class Example(Gtk.Window):
         cr.select_font_face("Sans", cairo.FONT_SLANT_NORMAL,
             cairo.FONT_WEIGHT_NORMAL)
         cr.set_font_size(40)
-        
+
         cr.move_to(60, 50)
         cr.show_text("Hello world")
 
